@@ -22,3 +22,4 @@ GitHub: VisualStudio Code ->
         **SYNCRONISIEREN**
 
 [ ] | [x]
+.
