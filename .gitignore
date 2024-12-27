@@ -1,0 +1,8 @@
+#Fonts folder
+fonts/
+#Org Bilder
+logo-silhouette/
+# temp Bilder
+tmp.bilder/
+#Photshop files
+*.psd

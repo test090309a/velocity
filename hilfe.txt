@@ -1,0 +1,95 @@
+Velocity
+--jn 15:35 26.12.2024
+
+Titel der Website:
+VeloCity Bikes and Beans – Dein Fahrradladen und Café in Wien
+
+Aufreißer (Header):
+"Pedale drehen, Kaffee genießen – Willkommen bei VeloCity Bikes and Beans!
+Dein neuer Treffpunkt für Fahrradliebhaber und Kaffeegenießer mitten in Wien."
+
+Webseiten-Menü (links):
+
+    Startseite
+
+    Über uns
+        Unsere Geschichte
+        Unser Team
+
+    Fahrräder
+        Stadtfahrräder
+        Mountainbikes
+        Rennräder
+        E-Bikes
+        Zubehör & Ersatzteile
+
+    Service & Reparatur
+        Servicepakete
+        Reparaturbuchung
+        Tipps zur Fahrradpflege
+
+    Bikes & Beans Café
+        Unsere Kaffeespezialitäten
+        Snacks & Kleinigkeiten
+        Veranstaltungen & Treffen
+
+    Events & Workshops
+        Fahrradtouren
+        Wartungsworkshops
+        Kaffeekurse
+
+    Kontakt
+        Anfahrt & Öffnungszeiten
+        Kontaktformular
+
+    Jobs
+        Stellenangebote
+        Bewerbungsformular
+
+Footer-Text:
+© 2023 VeloCity Bikes and Beans
+Fahrradladen & Café in Wien
+Adresse: Musterstraße 123, 1010 Wien
+Telefon: +43 123 456 789
+E-Mail: info@velocitybikesandbeans.at
+
+Öffnungszeiten:
+Mo-Fr: 9:00 – 18:00
+Sa: 10:00 – 16:00
+So: Geschlossen
+
+Social Media:
+Facebook | Instagram | Twitter
+
+Newsletter:
+Melde dich für unseren Newsletter an und verpasse keine Neuigkeiten, Angebote und Events!
+
+Impressum | Datenschutz | AGB
+
+Weitere Elemente für die Website:
+    Suchleiste: Für schnelles Finden von Produkten oder Informationen.
+    Aktuelle Angebote: Ein Banner mit Sonderaktionen oder Rabatten.
+    Kundenbewertungen: Zeige, was andere über dich sagen.
+    Blog: Tipps rund um Fahrräder, Kaffee und gesunden Lifestyle.
+    Galerie: Bilder vom Laden, Café und Events.
+    Online-Shop (optional): Falls du Fahrräder oder Zubehör online verkaufen möchtest.
+-
+    Fahrradlust
+    Kaffeekultur
+    Urban Lifestyle
+
+Diese Schlagwörter fassen die Kernidee von VeloCity Bikes and Beans treffend zusammen.
+
+"Willkommen bei Velocity Bikes & Beans - Dein Treffpunkt für Kaffeegenuss und Fahrradkultur in Wien!"
+--jn 08:02 27.12.2024
+
+GitHub
+Repo laden: git Clone https://github.com/test090309a/velocity.git
+Dateien lokal ins Verz. Velocity kopieren und
+git init
+git add .
+git commit -m "Betreff und Beschreibung"
+Repo raufladen: git push origin main
+Repo runterladen: git pull
+
+
