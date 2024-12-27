@@ -92,4 +92,6 @@ git commit -m "Betreff und Beschreibung"
 Repo raufladen: git push origin main
 Repo runterladen: git pull
 
+--jn 08:26 27.12.2024
+lokal bearbeiten, commit Nachricht und push
 
