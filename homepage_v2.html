@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VeloCity Bikes&Bohnen</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts: Rubik -->
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <style>
+        html,
+        body {
+            height: 100%;
+            /* Höhe auf 100% setzen */
+            margin: 0;
+            /* Standardmargin entfernen */
+            scroll-behavior: smooth;
+            /* Aktiviert sanftes Scrollen */
+        }
+
+        body {
+            background-image: url('homepage_hintergrund_v2.png');
+            /* Pfad zu Ihrem Hintergrundbild */
+            background-repeat: no-repeat;
+            /* Verhindert das Kacheln des Bildes */
+            background-position: center center;
+            /* Zentriert das Bild */
+            background-size: cover;
+            /* Dehnt das Bild, um den gesamten Bildschirm auszufüllen */
+            background-attachment: fixed;
+            /* Bild bleibt beim Scrollen fixiert */
+            font-family: 'Rubik', sans-serif;
+            /* Verwendung der Rubik-Schriftart */
+            min-width: 80%;
+            /* Mindestbreite für das Hintergrundbild */
+        }
+
+        .navbar {
+            /*background-color: rgba(30, 30, 30, 0.8); 
+             Dunkelgrau mit 80% Deckkraft */
+            background-color: rgba(0, 0, 0, 0.7);
+            /* Schwarz mit 70% Opazität */
+            transition: top 0.3s;
+            /* Sanfte Übergänge für das Ein- und Ausblenden */
+        }
+
+        .navbar-nav .nav-link {
+            text-transform: uppercase;
+            /* Macht den Text zu Großbuchstaben */
+            transition: color 0.3s;
+            /* Sanfter Übergang für die Farbe */
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #ff9800;
+            /* Ändert die Farbe beim Hover (z.B. zu Orange) */
+        }
+
+        .hero-section {
+            /* background: url('hero_hintergrund.jpg') no-repeat center center; */
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            font-weight: 700;
+            /* Fette Schrift für den Titel */
+        }
+
+        .section {
+            border-bottom: 1px solid #444;
+            padding: 40px 0;
+        }
+
+        .card {
+            background-color: #1e1e1e;
+            border: none;
+        }
+
+        .card-title {
+            color: #4CAF50;
+            /* Grüner Akzent */
+        }
+
+        footer {
+            background: linear-gradient(to top, rgb(0, 0, 0) 15%, rgba(30, 30, 30, 0) 100%);
+            /* Verlauf von dunkelgrau zu transparent */
+            text-align: center;
+            padding: 20px 0;
+            position: fixed;
+            /* Fixiert den Footer */
+            bottom: 0;
+            /* Setzt den Footer an das untere Ende */
+            left: 0;
+            /* Setzt den Footer an die linke Seite */
+            width: 100%;
+            /* Breite auf 100% setzen */
+        }
+
+        .social-media {
+            position: absolute;
+            width: 255px;
+            /* Absolute Positionierung */
+            bottom: 10px;
+            /* Abstand vom unteren Rand */
+            left: 10px;
+            /* Abstand vom linken Rand */
+        }
+
+        .footer-logo {
+            display: block;
+            width: 155px;
+            /* Block-Element für zentrierte Positionierung */
+            margin: 0 auto;
+            /* Zentriert das Logo */
+            margin-top: -10px;
+            /* Optionaler Abstand nach oben anpassen */
+        }
+
+        .header-logo {
+            display: block;
+            width: 75px;
+            /* Block-Element für zentrierte Positionierung */
+            margin: 0 auto;
+            /* Zentriert das Logo */
+            margin-top: 0px;
+            /* Optionaler Abstand nach oben anpassen */
+        }
+
+        .btn-success {
+            background-color: orange;
+            /* Setzt die Hintergrundfarbe auf Orange */
+            border-color: orange;
+            /* Setzt die Rahmenfarbe auf Orange */
+        }
+
+        .btn-success:hover {
+            background-color: darkorange;
+            /* Setzt die Hintergrundfarbe beim Hover auf Dunkelorange */
+            border-color: darkorange;
+            /* Setzt die Rahmenfarbe beim Hover auf Dunkelorange */
+        }
+
+        .card-body {
+            position: relative;
+            /* Ermöglicht die Positionierung des Buttons relativ zur Card */
+        }
+
+        .triangle-button {
+            display: inline-block;
+            width: 0;
+            height: 0;
+            border-left: 15px solid transparent;
+            /* Linke Seite des Dreiecks */
+            border-right: 15px solid transparent;
+            /* Rechte Seite des Dreiecks */
+            border-bottom: 30px solid orange;
+            /* Untere Seite des Dreiecks */
+            position: absolute;
+            /* Absolute Positionierung */
+            right: 50px;
+            bottom: 20px;
+            /* Abstand vom rechten Rand */
+            /* bottom: 10px; Kommt weg, damit der Button unten sizt.
+            /* Abstand vom unteren Rand */
+            transition: border-bottom-color 0.3s;
+            /* Sanfter Übergang für die Farbe */
+        }
+
+        .triangle-button:hover {
+            border-bottom-color: darkorange;
+            /* Dunkelorange beim Hover */
+        }
+
+        .hero_text {
+            display: block;
+            width: 75vh;
+            /* Block-Element für zentrierte Positionierung */
+            margin: 0 auto;
+            /* Zentriert das Logo */
+            margin-top: -10px;
+            /* Optionaler Abstand nach oben anpassen */
+        }
+    </style>
+</head>
+
+<body>
+<a id="top"></a>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="navbar">
+        <div class="container">
+            <!-- <a class="navbar-brand" href="#">VeloCity Bikes&Bohnen</a> -->
+            <a href="#top"><img src='logo.png' alt='Logo' class='header-logo' /></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <!-- <li class="nav-item"><a class="nav-link" href="#home">Home</a></li> -->
+                    <li class="nav-item"><a class="nav-link" href="#fahrraeder" style="text-align: right;">Fahrräder</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#service" style="text-align: right;">Service</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#cafe" style="text-align: right;">Café</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#kontakt" style="text-align: right;">Kontakt</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section" style="margin-top: -10%;">
+        <div>
+            <!-- <h1 class="hero-title">VeloCity Bikes&Bohnen</h1>
+            <p>Ihr Fahrradladen mit gemütlichem Café</p> -->
+            <img src="hero_text.png" class="hero_text">
+            <a href="#fahrraeder" class="btn btn-success btn-lg">Unsere Fahrräder</a>
+        </div>
+    </header>
+
+    <!-- Hauptinhalt -->
+    <main class="container my-5" style="padding-top: 80px;"> <!-- Platz für die fixe Navigation schaffen -->
+
+        <!-- Fahrräder -->
+        <section id="fahrraeder" class="section">
+            <h2>Unsere Fahrräder</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="stadtrad.jpg" class="card-img-top" alt="Stadtrad">
+                        <div class="card-body">
+                            <h5 class="card-title">Stadtrad</h5>
+                            <p>Perfekt für die Stadt.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Weitere Fahrradkarten hier hinzufügen -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="mountainbike.jpg" class="card-img-top" alt="Mountainbike">
+                        <div class="card-body">
+                            <h5 class="card-title">Mountainbike</h5>
+                            <p>Für Abenteuer abseits der Straßen.</p>
+                        </div>
+                    </div>
+                </div>
+                <!--<a href="#navbar" class="btn btn-success">Nach oben</a>  Button zum Nach oben -->
+                <!-- Weitere Fahrradkarten hier hinzufügen -->
+            </div>
+        </section>
+
+        <!-- Services -->
+        <section id="service" class="section">
+            <h2>Unsere Services</h2>
+            <p>Wir bieten professionelle Reparaturen und Wartungen für alle Fahrradtypen an.</p>
+        </section>
+
+        <!-- Café -->
+        <section id="cafe" class="section">
+            <h2>Unser Café</h2>
+            <p>Genießen Sie eine Tasse Kaffee oder Tee in unserem gemütlichen Café nach Ihrer Radtour.</p>
+        </section>
+
+        <!-- Kontakt -->
+        <section id="kontakt" class="section">
+            <h2>Kontaktieren Sie uns</h2>
+            <form action="#" method="#" novalidate>
+                <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Name" required>
+                </div>
+                <div class="mb-3">
+                    <input type="email" class="form-control" placeholder="E-Mail" required>
+                </div>
+                <textarea class="form-control mb-3" placeholder="Ihre Nachricht"></textarea>
+                <button type="submit" class="btn btn-success">Senden</button>
+            </form>
+
+            <!-- Adresse und Öffnungszeiten -->
+            <h3>Adresse</h3>
+            <p>Musterstraße 123<br>12345 Musterhausen</p>
+
+            <h3>Öffnungszeiten</h3>
+            <p>Mo-Fr: 9-18 Uhr<br>Sa: 10-14 Uhr</p>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <footer>
+            <!-- Bild für soziale Medien -->
+            <img src='sozialemedien.png' alt='Soziale Medien' class='social-media' />
+            <!-- Logo in der Mitte des Footers -->
+            <img src='logo.png' alt='Logo' class='footer-logo' />
+            <a href="#top" class="triangle-button" title="Nach Oben"></a> <!-- Dreieck-Button -->
+        </footer>
+
+        <!-- Bootstrap JS Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Custom JavaScript for Navbar Hide/Show on Scroll -->
+        <script>
+            let lastScrollTop = 0;
+            const navbar = document.getElementById("navbar");
+
+            window.addEventListener("scroll", function () {
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+                if (scrollTop > lastScrollTop) {
+                    // Scroll Down - Navbar ausblenden
+                    navbar.style.top = "-80px"; // Höhe der Navbar
+                } else {
+                    // Scroll Up - Navbar einblenden
+                    navbar.style.top = "0";
+                }
+
+                lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Für Mobile oder negative Werte
+            });
+        </script>
+
+</body>
+
+</html>

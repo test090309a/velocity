@@ -96,3 +96,7 @@ Repo runterladen: git pull
 lokal bearbeiten, commit Nachricht und push
 commit: betreff und Beschreibung
 
+--jn 10:27 27.12.2024
+Farben: #f5ead0 Beige
+        #557ea1 Blau
+
