@@ -3,7 +3,6 @@ html,
 body {
     height: 100%; /* Volle Höhe des Viewports */
     margin: 0; /* Entfernt den Standard-Margin */
-    background-color: black; /* Schwarze Hintergrundfarbe. */
     scroll-behavior: smooth; /* Sanftes Scrollen für Ankerlinks */
 }
 
@@ -138,7 +137,7 @@ footer {
 .social-media {
     position: absolute; /* Absolute Positionierung */
     width: 255px; /* Breite der Social-Media-Icons */
-    bottom: 0px; /* Abstand vom unteren Rand */
+    bottom: 10px; /* Abstand vom unteren Rand */
     left: 10px; /* Abstand vom linken Rand */
 }
 
