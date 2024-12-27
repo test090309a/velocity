@@ -94,4 +94,5 @@ Repo runterladen: git pull
 
 --jn 08:26 27.12.2024
 lokal bearbeiten, commit Nachricht und push
+commit: betreff und Beschreibung
 
