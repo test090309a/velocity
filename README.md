@@ -1,19 +1,17 @@
-# velocity
-## Bikes and Beans<br>
-Fahrradladen vom Weix.
-Erstellung von Website, Logo,...
+# VELOCITY
+## Bikes & Bohnen<br>
+Fahrradladen Wien.
+
+Erstellung: Website, Logo, ...
 - Logo vektorisieren, neu erstellen
 - Website
   - Stil - Brutalism 
   - Bildmaterial - InvokeUi
   - Schriften - GoogleFonts: Rubik
 
-[ ]
-[x]
+V2 ![Alt-Text](homepage_v2.png)
 
-![Alt-Text](homepage_v2.png)
-
-![Alt-Text](homepage_v1.png)
+V1 ![Alt-Text](homepage_v1.png)
 ---
 [DTF](http://test090309a.free.nf)
 
@@ -23,4 +21,4 @@ GitHub: VisualStudio Code ->
         commiten (Betreff mit Beschreibung) 
         **SYNCRONISIEREN**
 
-.
+[ ] | [x]
