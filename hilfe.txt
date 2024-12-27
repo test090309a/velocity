@@ -100,3 +100,10 @@ commit: betreff und Beschreibung
 Farben: #f5ead0 Beige
         #557ea1 Blau
 
+--jn 15:09 27.12.2024
+DeepSeek:
+ich will dass die cards eine mindest höhe von 500px hat und der hintergrund transparent grau wird. das kontakt formular soll die hälfte des bidlschirmes ausfüllen und daneben eine google maps karte mit der adresse hernalserhauptstrasse 23 1170 wien anzeigen. der footer soll eine mindesthöhe von 200px haben. der card text, titel in orange und gross, fliesstext in beige. für den punkt services eine liste mit den angeboten des fahrradladens, er bietet radservice, beratung und reparaturen an. der punkt cafe, ein bild des ladens mit kaffee gästen und einem beschreibenden text den du dir einfallen lassen sollst. adresse und sollen so wie die anderen cards gestaltet werden, mindesthöhe und ausreichend abstand zum footer um ein ausgeglichenes bild zu erzeugen.
+
+--jn 16:18 27.12.2024
+Website V3
+css und js sind ausgelagert.

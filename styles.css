@@ -1,0 +1,258 @@
+/* Grundlegende Stile für das gesamte Dokument */
+html,
+body {
+    height: 100%; /* Volle Höhe des Viewports */
+    margin: 0; /* Entfernt den Standard-Margin */
+    scroll-behavior: smooth; /* Sanftes Scrollen für Ankerlinks */
+}
+
+/* Stile für den Body */
+body {
+    background-image: url('homepage_hintergrund_v2.png'); /* Hintergrundbild */
+    background-repeat: no-repeat; /* Verhindert das Kacheln des Bildes */
+    background-position: center center; /* Zentriert das Hintergrundbild */
+    background-size: cover; /* Dehnt das Bild, um den gesamten Bildschirm auszufüllen */
+    background-attachment: fixed; /* Hintergrundbild bleibt beim Scrollen fixiert */
+    font-family: 'Rubik', sans-serif; /* Verwendet die Rubik-Schriftart */
+    min-width: 80%; /* Mindestbreite für das Layout */
+}
+
+/* Stile für die Navigationsleiste */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.7); /* Schwarzer Hintergrund mit 70% Deckkraft */
+    transition: top 0.3s; /* Sanfte Übergänge für das Ein- und Ausblenden */
+}
+
+/* Stile für die Links in der Navigationsleiste */
+.navbar-nav .nav-link {
+    text-transform: uppercase; /* Text in Großbuchstaben */
+    transition: color 0.3s; /* Sanfter Übergang für die Farbe */
+}
+
+/* Hover-Effekt für die Links in der Navigationsleiste */
+.navbar-nav .nav-link:hover {
+    color: #ff9800; /* Farbe ändert sich zu Orange beim Hover */
+}
+
+/* Stile für den Hero-Bereich (Titelbereich) */
+.hero-section {
+    background-size: cover; /* Deckt den gesamten Bereich ab */
+    height: 100vh; /* Volle Höhe des Viewports */
+    display: flex; /* Flexbox für zentrierte Ausrichtung */
+    justify-content: center; /* Zentriert den Inhalt horizontal */
+    align-items: center; /* Zentriert den Inhalt vertikal */
+    text-align: center; /* Text zentriert */
+}
+
+/* Stile für den Titel im Hero-Bereich */
+.hero-title {
+    font-size: 4rem; /* Große Schriftgröße */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Textschatten */
+    font-weight: 700; /* Fette Schrift */
+}
+
+/* Stile für die Abschnitte (Sections) */
+.section {
+    /*border-bottom: 1px solid #444;  Untere Rahmenlinie */
+    padding: 150px 0; /* Innenabstand oben und unten */
+}
+
+/* Stile für die Karten (Cards) */
+.card {
+    background-color: rgba(30, 30, 30, 0.8); /* Dunkelgrauer Hintergrund mit 80% Deckkraft */
+    border: none; /* Kein Rahmen */
+    min-height: 500px; /* Mindesthöhe der Karten */
+    margin-bottom: 0; /* Kein Abstand nach unten, da die Footer-Card folgt */
+    display: flex; /* Flexbox für gleichmäßige Höhe */
+    flex-direction: column; /* Spaltenanordnung */
+    justify-content: space-between; /* Gleichmäßiger Abstand zwischen den Elementen */
+    position: relative; /* Relative Positionierung für interne Elemente */
+}
+
+/* Stile für die Footer-Card */
+.card-footer {
+    /*background-color: rgba(30, 30, 30, 0.8);  Dunkelgrauer Hintergrund mit 80% Deckkraft */
+    border: none; /* Kein Rahmen */
+    height: 60px; /* Feste Höhe für die Footer-Card */
+    position: relative; /* Relative Positionierung für den Button */
+    margin-bottom: 20px; /* Abstand nach unten */
+}
+
+/* Stile für den Dreieck-Button in der Footer-Card */
+.card-footer .triangle-button {
+    display: inline-block; /* Inline-Block-Element */
+    width: 0; /* Breite auf 0 */
+    height: 0; /* Höhe auf 0 */
+    border-left: 15px solid transparent; /* Linke Seite des Dreiecks */
+    border-right: 15px solid transparent; /* Rechte Seite des Dreiecks */
+    border-bottom: 30px solid orange; /* Untere Seite des Dreiecks */
+    position: absolute; /* Absolute Positionierung */
+    right: 20px; /* Abstand vom rechten Rand */
+    bottom: 10px; /* Abstand vom unteren Rand */
+    transition: border-bottom-color 0.3s; /* Sanfter Übergang für die Farbe */
+    z-index: 1000; /* Der Button ist immer in der vordersten Ebene */
+}
+
+/* Hover-Effekt für den Dreieck-Button */
+.card-footer .triangle-button:hover {
+    border-bottom-color: darkorange; /* Dunkleres Orange beim Hover */
+}
+
+/* Hover-Effekt für den Dreieck-Button */
+.card-footer .triangle-button:hover {
+    border-bottom-color: darkorange; /* Dunkleres Orange beim Hover */
+}
+
+/* Hover-Effekt für den Dreieck-Button */
+.card-container .triangle-button:hover {
+    border-bottom-color: darkorange; /* Dunkleres Orange beim Hover */
+}
+
+/* Stile für den Titel in den Karten */
+.card-title {
+    color: orange; /* Orangefarbener Text */
+    font-size: 2rem; /* Große Schriftgröße */
+    text-align: center; /* Text zentriert */
+}
+
+/* Stile für den Fließtext in den Karten */
+.card-text {
+    color: #d2d2d2; /* Grau Text */
+    text-align: center; /* Text zentriert */
+}
+
+/* Stile für den Footer */
+footer {
+    background: linear-gradient(to top, rgb(0, 0, 0) 15%, rgba(30, 30, 30, 0) 100%); /* Verlauf von Schwarz zu Transparent */
+    text-align: center; /* Text zentriert */
+    padding: 20px 0; /* Innenabstand oben und unten */
+    position: fixed; /* Fixiert den Footer am unteren Rand */
+    bottom: 0; /* Position am unteren Rand */
+    left: 0; /* Position am linken Rand */
+    width: 100%; /* Volle Breite */
+    min-height: 170px; /* Mindesthöhe des Footers */
+}
+
+/* Stile für die Social-Media-Icons im Footer */
+.social-media {
+    position: absolute; /* Absolute Positionierung */
+    width: 255px; /* Breite der Social-Media-Icons */
+    bottom: 10px; /* Abstand vom unteren Rand */
+    left: 10px; /* Abstand vom linken Rand */
+}
+
+/* Stile für das Logo im Footer */
+.footer-logo {
+    display: block; /* Block-Element für zentrierte Positionierung */
+    width: 155px; /* Breite des Logos */
+    margin: 0 auto; /* Zentriert das Logo horizontal */
+    margin-top: 100px; /* Optionaler Abstand nach oben */
+}
+
+/* Stile für das Logo in der Navigationsleiste */
+.header-logo {
+    display: block; /* Block-Element für zentrierte Positionierung */
+    width: 75px; /* Breite des Logos */
+    margin: 0 auto; /* Zentriert das Logo horizontal */
+    margin-top: 0px; /* Optionaler Abstand nach oben */
+}
+
+/* Stile für den Erfolgs-Button (z.B. "Unsere Fahrräder") */
+.btn-success {
+    background-color: orange; /* Orangefarbener Hintergrund */
+    border-color: orange; /* Orangefarbener Rahmen */
+}
+
+/* Hover-Effekt für den Erfolgs-Button */
+.btn-success:hover {
+    background-color: darkorange; /* Dunkleres Orange beim Hover */
+    border-color: darkorange; /* Dunkleres Orange beim Hover */
+}
+
+/* Stile für den Card-Body (Inhalt der Karten) */
+.card-body {
+    position: relative; /* Relative Positionierung für interne Elemente */
+}
+
+/* Stile für den Dreieck-Button (z.B. "Nach oben") */
+.triangle-button {
+    display: inline-block; /* Inline-Block-Element */
+    width: 0; /* Breite auf 0 */
+    height: 0; /* Höhe auf 0 */
+    border-left: 15px solid transparent; /* Linke Seite des Dreiecks */
+    border-right: 15px solid transparent; /* Rechte Seite des Dreiecks */
+    border-bottom: 30px solid orange; /* Untere Seite des Dreiecks */
+    position: absolute; /* Absolute Positionierung */
+    right: 50px; /* Abstand vom rechten Rand */
+    bottom: 20px; /* Abstand vom unteren Rand */
+    transition: border-bottom-color 0.3s; /* Sanfter Übergang für die Farbe */
+}
+
+/* Hover-Effekt für den Dreieck-Button */
+.triangle-button:hover {
+    border-bottom-color: darkorange; /* Dunkleres Orange beim Hover */
+}
+
+/* Stile für die Karten (Cards) */
+.card {
+    background-color: rgba(30, 30, 30, 0.8); /* Dunkelgrauer Hintergrund mit 80% Deckkraft */
+    border: none; /* Kein Rahmen */
+    min-height: 500px; /* Mindesthöhe der Karten */
+    margin-bottom: 20px; /* Abstand nach unten */
+    display: flex; /* Flexbox für gleichmäßige Höhe */
+    flex-direction: column; /* Spaltenanordnung */
+    justify-content: space-between; /* Gleichmäßiger Abstand zwischen den Elementen */
+    position: relative; /* Relative Positionierung für interne Elemente */
+}
+
+/* Stile für den Dreieck-Button in den Karten */
+.card .triangle-button {
+    display: block; /* Block-Element für eine neue Zeile */
+    width: 0; /* Breite auf 0 */
+    height: 0; /* Höhe auf 0 */
+    border-left: 15px solid transparent; /* Linke Seite des Dreiecks */
+    border-right: 15px solid transparent; /* Rechte Seite des Dreiecks */
+    border-bottom: 30px solid orange; /* Untere Seite des Dreiecks */
+    margin: 20px auto; /* Zentriert den Button und fügt Abstand hinzu */
+    transition: border-bottom-color 0.3s; /* Sanfter Übergang für die Farbe */
+}
+
+/* Hover-Effekt für den Dreieck-Button */
+.card .triangle-button:hover {
+    border-bottom-color: darkorange; /* Dunkleres Orange beim Hover */
+}
+
+/* Stile für den Hero-Text (z.B. "VeloCity Bikes&Bohnen") */
+.hero_text {
+    display: block; /* Block-Element für zentrierte Positionierung */
+    width: 75vh; /* Breite des Texts */
+    margin: 0 auto; /* Zentriert den Text horizontal */
+    margin-top: -10px; /* Optionaler Abstand nach oben */
+}
+
+/* Stile für das Kontaktformular */
+.contact-form {
+    width: 50%; /* Nimmt die Hälfte des Bildschirms ein */
+    float: left; /* Linksbündige Ausrichtung */
+    padding-right: 20px; /* Abstand nach rechts */
+}
+
+/* Stile für die Google Maps-Karte */
+.map {
+    width: 50%; /* Nimmt die Hälfte des Bildschirms ein */
+    float: right; /* Rechtsbündige Ausrichtung */
+}
+
+/* Stile für das iframe der Google Maps-Karte */
+.map iframe {
+    width: 100%; /* Volle Breite */
+    height: 500px; /* Feste Höhe */
+    border: 0; /* Kein Rahmen */
+}
+
+/* Stile für das Café-Bild */
+.cafe-image {
+    width: 100%; /* Volle Breite */
+    height: auto; /* Automatische Höhe */
+    margin-bottom: 20px; /* Abstand nach unten */
+}
