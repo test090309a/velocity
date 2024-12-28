@@ -29,6 +29,15 @@ body {
     /* Mindestbreite für das Layout */
 }
 
+/* Farben für die Schrift in Formularen. */
+h2 {
+    color: orange !important;
+}
+.form-label {
+    color: #d2d2d2;
+  }
+
+
 /* Stile für die Navigationsleiste */
 .navbar {
     background-color: rgba(0, 0, 0, 0.7);
@@ -145,8 +154,6 @@ body {
     /* Abstand vom unteren Rand */
     transition: border-bottom-color 0.3s;
     /* Sanfter Übergang für die Farbe */
-    z-index: 1000;
-    /* Der Button ist immer in der vordersten Ebene */
 }
 
 /* Hover-Effekt für den Dreieck-Button */

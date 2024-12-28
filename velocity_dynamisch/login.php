@@ -1,12 +1,25 @@
-<?php include 'includes/header.php'; ?>
-
 <?php
+session_set_cookie_params([
+    'lifetime' => 0, // Cookie läuft ab, wenn der Browser geschlossen wird
+    'path' => '/',
+    'domain' => '', // Leer lassen für die aktuelle Domain
+    'secure' => true, // Nur über HTTPS
+    'httponly' => true, // Verhindert Zugriff via JavaScript
+    'samesite' => 'Strict' // Verhindert Cross-Site Request Forgery (CSRF)
+]);
 session_start();
+
+// Passwort-Hashing
+$hashed_password = password_hash('sysop', PASSWORD_DEFAULT);
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST['username'];
+    $username = filter_var($_POST['username'], FILTER_SANITIZE_STRING);
     $password = $_POST['password'];
-    if ($username == 'admin' && $password == 'sysop') {
+
+    if ($username === 'admin' && password_verify($password, $hashed_password)) {
         $_SESSION['admin_logged_in'] = true;
+        $_SESSION['username'] = $username; // Benutzernamen in der Session speichern
+        session_regenerate_id(true); // Session-ID regenerieren
         header('Location: admin.php');
         exit();
     } else {
@@ -14,6 +27,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
+
+<?php include 'includes/header.php'; ?>
 
 <!-- Login Formular -->
 <div class="container my-5">

@@ -5,13 +5,8 @@ if (!isset($_SESSION['admin_logged_in'])) {
     exit();
 }
 
-// CSRF-Token überprüfen
-if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
-    die('CSRF-Token ungültig.');
-}
-
-// Sicherheitscheck für ID
-if (!isset($_POST['id']) || !filter_var($_POST['id'], FILTER_VALIDATE_INT)) {
+// Security check for ID
+if (!isset($_POST['id']) || !is_numeric($_POST['id'])) {
     die('Ungültige ID.');
 }
 $id = $_POST['id'];

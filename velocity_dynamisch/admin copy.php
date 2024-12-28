@@ -51,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 // SQL Query to Load Cards
-$sql = "SELECT * FROM cards ORDER BY sort_order ASC";
+$sql = "SELECT * FROM cards";
 $result = $conn->query($sql);
 ?>
 
@@ -68,34 +68,36 @@ $result = $conn->query($sql);
 
     <!-- Liste der vorhandenen Karten -->
     <h2 class="text-center mt-5">Vorhandene Fahrräder.</h2>
-    <div class="row" id="sortable-cards">
-    <?php
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            echo '<div class="col-md-4 mb-4" data-id="' . $row['id'] . '" style="z-index: 1;">
-                    <div class="card">
-                        <img src="' . htmlspecialchars($row['image_name'], ENT_QUOTES, 'UTF-8') . '" class="card-img-top" alt="Bike">
-                        <div class="card-body">
-                            <h5 class="card-title">' . htmlspecialchars($row['titel'], ENT_QUOTES, 'UTF-8') . '</h5>
-                            <p class="card-text">' . htmlspecialchars($row['description'], ENT_QUOTES, 'UTF-8') . '</p>
+    <div class="row">
+        <?php
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                echo '<div class="col-md-4 mb-4" style="z-index: 1;">
+                        <div class="card">
+                            <img src="' . htmlspecialchars($row['image_name'], ENT_QUOTES, 'UTF-8') . '" class="card-img-top" alt="Bike">
+                            <div class="card-body">
+                                <h5 class="card-title">' . htmlspecialchars($row['titel'], ENT_QUOTES, 'UTF-8') . '</h5>
+                                <p class="card-text">' . htmlspecialchars($row['description'], ENT_QUOTES, 'UTF-8') . '</p>
+                            </div>
+                            <div class="card-footer text-center">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <a href="edit.php?id=' . $row['id'] . '" class="btn btn-success">Bearbeiten</a>
+                                    <form action="delete.php" method="post" class="d-inline">
+                                        <input type="hidden" name="csrf_token" value="' . $_SESSION['csrf_token'] . '">
+                                        <input type="hidden" name="id" value="' . $row['id'] . '">
+                                        <button type="submit" class="btn btn-danger" onclick="return confirm(\'Sind Sie sicher, dass Sie diese Karte löschen möchten?\')">Löschen</button>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
-                        <div class="card-footer text-center">
-                            <a href="edit.php?id=' . $row['id'] . '" class="btn btn-success">Bearbeiten</a>
-                            <form action="delete.php" method="post" class="d-inline">
-                                <input type="hidden" name="csrf_token" value="' . $_SESSION['csrf_token'] . '">
-                                <input type="hidden" name="id" value="' . $row['id'] . '">
-                                <button type="submit" class="btn btn-danger" onclick="return confirm(\'Sind Sie sicher, dass Sie diese Karte löschen möchten?\')">Löschen</button>
-                            </form>
-                        </div>
-                    </div>
-                  </div>';
+                      </div>';
+            }
+        } else {
+            echo "<p>Keine Fahrräder verfügbar.</p>";
         }
-    } else {
-        echo "<p>Keine Fahrräder verfügbar.</p>";
-    }
-    $conn->close();
-    ?>
-</div>
+        $conn->close();
+        ?>
+    </div>
 </main>
 
 <?php include 'includes/footer.php'; ?>

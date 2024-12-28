@@ -48,3 +48,19 @@ window.addEventListener("scroll", function () {
 
     lastScrollTop = scrollTop;
 });
+
+// Event-Listener für das Scrollen der Seite (Navbar ein-/ausblenden)
+let lastScrollTop2 = 0;
+const navbar = document.getElementById("navbar");
+
+window.addEventListener("scroll", function () {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop2) {
+        navbar.style.top = "-80px"; // Navigationsleiste ausblenden
+    } else {
+        navbar.style.top = "0"; // Navigationsleiste einblenden
+    }
+
+    lastScrollTop2 = scrollTop <= 0 ? 0 : scrollTop;
+});
