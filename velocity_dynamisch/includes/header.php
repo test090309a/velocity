@@ -34,7 +34,7 @@
                     <?php if (!isset($_SESSION['admin_logged_in'])): ?>
                         <li class="nav-item"><a class="nav-link" href="./login.php">Login</a></li>
                     <?php else: ?>
-                        <li class="nav-item"><a href="./logout.php" class="btn btn-danger">Logout</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./logout.php" class="btn btn-danger">Logout</a></li>
                     <?php endif; ?>
                 </ul>
             </div>

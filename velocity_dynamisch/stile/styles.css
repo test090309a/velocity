@@ -46,6 +46,12 @@ h2 {
     /* Sanfte Übergänge für das Ein- und Ausblenden */
 }
 
+/* Stile für den Logout-Button im Hamburger-Menü */
+.navbar-nav .btn-danger {
+    margin-left: auto; /* Verschiebt den Button nach rechts */
+    margin-right: 10px; /* Optional: Fügt etwas Abstand zum rechten Rand hinzu */
+}
+
 /* Stile für die Links in der Navigationsleiste */
 .navbar-nav .nav-link {
     text-transform: uppercase;

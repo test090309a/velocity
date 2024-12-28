@@ -31,12 +31,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <?php include 'includes/header.php'; ?>
 
 <!-- Login Formular -->
-<div class="container my-5">
-    <?php if(isset($error)) echo "<p>$error</p>"; ?>
+<div class="container my-5" style="max-width: 400px;min-width: 300px;padding-top: 73px;">
+
     <form method="post" action="">
         <div class="mb-3">
             <label for="username" class="form-label">Username:</label>
-            <input type="text" class="form-control" id="username" name="username" required>
+            <input type="text" class="form-control" id="username" name="username" autofocus required>
         </div>
         <div class="mb-3">
             <label for="password" class="form-label">Password:</label>
@@ -44,6 +44,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
         <button type="submit" class="btn btn-primary">Login</button>
     </form>
-</div>
+    <?php if (isset($error)) echo "<br><br><br><p style='color:red;'>$error</p>"; ?>
 
+</div>
+<br><br><br><br><br>
 <?php include 'includes/footer.php'; ?>

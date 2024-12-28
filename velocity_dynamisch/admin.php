@@ -64,7 +64,6 @@ $result = $conn->query($sql);
     <h2 class="text-center mb-4">Bild und Beschreibung hochladen</h2>
 
     <a href="upload.php" class="btn btn-success">Erstelle ein Fahrrad ></a>
-    <a href="./logout.php" class="btn btn-danger">Logout</a>
 
     <!-- Liste der vorhandenen Karten -->
     <h2 class="text-center mt-5">Vorhandene Fahrräder.</h2>
