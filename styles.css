@@ -9,7 +9,7 @@ body {
 
 /* Stile für den Body */
 body {
-    background-image: url('homepage_hintergrund_v2.png'); /* Hintergrundbild */
+    background-image: url('homepage_hintergrund.jpg'); /* Hintergrundbild */
     background-repeat: no-repeat; /* Verhindert das Kacheln des Bildes */
     background-position: center center; /* Zentriert das Hintergrundbild */
     background-size: cover; /* Dehnt das Bild, um den gesamten Bildschirm auszufüllen */
