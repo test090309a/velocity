@@ -18,46 +18,6 @@ if ($conn->connect_error) {
 // SQL-Abfrage um die Cards zu laden, sortiert nach sort_order
 $sql = "SELECT * FROM cards ORDER BY sort_order ASC";
 $result = $conn->query($sql);
-
-// Formularverarbeitung
-$messageSent = false;
-$errorMessages = [];
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Eingaben validieren
-    $name = trim($_POST['name']);
-    $email = trim($_POST['email']);
-    $message = trim($_POST['message']);
-
-    // Überprüfen, ob alle Felder ausgefüllt sind
-    if (empty($name)) {
-        $errorMessages[] = "Bitte geben Sie Ihren Namen ein.";
-    }
-    if (empty($email)) {
-        $errorMessages[] = "Bitte geben Sie Ihre E-Mail-Adresse ein.";
-    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $errorMessages[] = "Bitte geben Sie eine gültige E-Mail-Adresse ein.";
-    }
-    if (empty($message)) {
-        $errorMessages[] = "Bitte geben Sie eine Nachricht ein.";
-    }
-
-    // Wenn keine Fehler vorhanden sind, Daten in die Datenbank speichern
-    if (empty($errorMessages)) {
-        $name = $conn->real_escape_string($name);
-        $email = $conn->real_escape_string($email);
-        $message = $conn->real_escape_string($message);
-
-        // SQL-Befehl zum Einfügen der Daten in die Tabelle
-        $sql = "INSERT INTO kontaktanfragen (name, email, nachricht) VALUES ('$name', '$email', '$message')";
-
-        if ($conn->query($sql) === TRUE) {
-            $messageSent = true;
-        } else {
-            $errorMessages[] = "Fehler beim Speichern der Nachricht: " . $conn->error;
-        }
-    }
-}
 ?>
 
 <!-- Hauptinhalt -->
@@ -149,29 +109,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <h2 style="color: orange;text-transform: uppercase;">Kontaktieren Sie uns</h2>
         <div class="row">
             <div class="contact-form">
-                <?php if ($messageSent): ?>
-                    <div class="alert alert-success" role="alert">
-                        Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet.
+                <form action="#" method="#" novalidate>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" placeholder="Name" required>
                     </div>
-                <?php else: ?>
-                    <?php if (!empty($errorMessages)): ?>
-                        <div class="alert alert-danger" role="alert">
-                            <?php foreach ($errorMessages as $error): ?>
-                                <p><?php echo $error; ?></p>
-                            <?php endforeach; ?>
-                        </div>
-                    <?php endif; ?>
-                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>#kontakt" method="POST" novalidate>
-                        <div class="mb-3">
-                            <input type="text" class="form-control" name="name" placeholder="Name" required value="<?php echo isset($_POST['name']) ? htmlspecialchars($_POST['name']) : ''; ?>">
-                        </div>
-                        <div class="mb-3">
-                            <input type="email" class="form-control" name="email" placeholder="E-Mail" required value="<?php echo isset($_POST['email']) ? htmlspecialchars($_POST['email']) : ''; ?>">
-                        </div>
-                        <textarea class="form-control mb-3" name="message" placeholder="Ihre Nachricht" required><?php echo isset($_POST['message']) ? htmlspecialchars($_POST['message']) : ''; ?></textarea>
-                        <button type="submit" class="btn btn-success">Senden</button>
-                    </form>
-                <?php endif; ?>
+                    <div class="mb-3">
+                        <input type="email" class="form-control" placeholder="E-Mail" required>
+                    </div>
+                    <textarea class="form-control mb-3" placeholder="Ihre Nachricht"></textarea>
+                    <button type="submit" class="btn btn-success">Senden</button>
+                </form>
             </div>
             <div class="map">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2658.091943200345!2d16.34604831565183!3d48.21164497923088!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476d079b265aa8b9%3A0x1a9b1b1b1b1b1b1b!2sHernalser%20Hauptstra%C3%9Fe%2023%2C%201170%20Wien!5e0!3m2!1sde!2sat!4v1633021234567!5m2!1sde!2sat" allowfullscreen="" loading="lazy"></iframe>

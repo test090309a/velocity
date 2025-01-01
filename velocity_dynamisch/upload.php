@@ -18,29 +18,32 @@ if ($conn->connect_error) {
 <?php include 'includes/header.php'; ?>
 
 <main class="container my-5">
-    <h2 class="text-center mb-4">Karte bearbeiten</h2>
-    <!-- Upload Bild Formular -->
-    <form method="post" action="./insert.php" enctype="multipart/form-data" class="row g-3">
-        <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
-        <div class="col-md-6">
-            <label for="image" class="form-label">Bild:</label>
-            <input type="file" accept="image/*" class="form-control" id="image" name="image" required>
-        </div>
+    <br><br><br>
+    <h2 class="text-center mb-4">Fahrrad Artikel erstellen</h2>
+    <h3 class="text-center mb-4" style="color:beige">Bild und Beschreibung hochladen</h2>
+        <!-- Upload Bild Formular -->
+        <form method="post" action="./insert.php" enctype="multipart/form-data" class="row g-3">
+            <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
+            <div class="col-md-6">
+                <label for="image" class="form-label">Bild:</label>
+                <input type="file" accept="image/*" class="form-control" id="image" name="image" required>
+            </div>
 
-        <div class="col-md-12">
-            <label for="titel" class="form-label">Titel:</label>
-            <textarea class="form-control" id="titel" name="titel" rows="1" required></textarea>
-        </div>
+            <div class="col-md-12">
+                <label for="titel" class="form-label">Titel:</label>
+                <textarea class="form-control" id="titel" name="titel" rows="1" required></textarea>
+            </div>
 
-        <div class="col-md-12">
-            <label for="description" class="form-label">Beschreibung:</label>
-            <textarea class="form-control" id="description" name="description" rows="5" required></textarea>
-        </div>
+            <div class="col-md-12">
+                <label for="description" class="form-label">Beschreibung:</label>
+                <textarea class="form-control" id="description" name="description" rows="5" required></textarea>
+            </div>
 
-        <div class="col-md-12 text-center">
-            <button type="submit" name="submit" class="btn btn-primary">Upload</button>
-        </div>
-    </form>
+            <div class="col-md-12 text-center">
+                <button type="submit" name="submit" class="btn btn-primary">Upload</button>
+            </div>
+        </form>
+        <br><br><br>
 </main>
 
 <?php include 'includes/footer.php'; ?>

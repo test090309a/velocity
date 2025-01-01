@@ -386,3 +386,14 @@ footer {
     margin-bottom: 20px;
     /* Abstand nach unten */
 }
+
+/* CSS für blinkenden Button */
+@keyframes blink {
+    0% { background-color: #dc3545; } /* Rot (Standardfarbe des Buttons) */
+    50% { background-color: #ff6b6b; } /* Helleres Rot */
+    100% { background-color: #dc3545; } /* Zurück zur Standardfarbe */
+}
+
+.blinking-button {
+    animation: blink 1s infinite; /* Animation dauert 1 Sekunde und wiederholt sich unendlich */
+}

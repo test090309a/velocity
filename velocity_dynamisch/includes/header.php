@@ -34,7 +34,22 @@
                     <?php if (!isset($_SESSION['admin_logged_in'])): ?>
                         <li class="nav-item"><a class="nav-link" href="./login.php">Login</a></li>
                     <?php else: ?>
-                        <li class="nav-item"><a class="nav-link" href="./logout.php" class="btn btn-danger">Logout</a></li>
+                        <!--                         <li class="nav-item">
+                            <form action="admin.php" method="post" class="d-inline nav-link">
+                                <button type="submit" class="btn btn-danger">Adminbereich</button>
+                            </form>
+                        </li>
+                        <li class="nav-item">
+                            <form action="logout.php" method="post" class="d-inline nav-link">
+                                <button type="submit" class="btn btn-danger">Abmelden</button>
+                            </form>
+                        </li> -->
+                        <form action="admin.php" method="post" class="d-inline nav-link">
+                            <button type="submit" class="btn btn-dark">Adminbereich</button>
+                        </form>
+                        <form action="logout.php" method="post" class="d-inline nav-link">
+                            <button type="submit" class="btn btn-danger blinking-button">Abmelden</button>
+                        </form>
                     <?php endif; ?>
                 </ul>
             </div>
